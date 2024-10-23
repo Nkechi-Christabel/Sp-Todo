@@ -14,7 +14,7 @@ const EditTodo = ({}) => {
   return todo ? (
     <div className='h-screen container m-auto max-w-[414px] flex flex-col'>
       <Header>
-        <h1 className='h-20 flex items-center justify-center text-white'>
+        <h1 className='h-20 flex items-center justify-center text-white font-bold'>
           Edit Task
         </h1>
       </Header>

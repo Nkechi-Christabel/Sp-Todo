@@ -6,7 +6,7 @@ export const Upgrade = () => {
       {' '}
       <img src='/cup.svg' alt='A cup' />
       <p className=''>Go Pro Upgrade Now</p>
-      <span className='absolute right-5 top-0 bg-secondary p-4 text-[#F2C94C]'>
+      <span className='absolute right-6 top-0 bg-secondary p-4 text-[#F2C94C]'>
         $1
       </span>
     </div>
