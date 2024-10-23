@@ -17,7 +17,7 @@ const Task = ({ title, id, checked }: Props) => {
       <label className='flex items-center space-x-4 cursor-pointer '>
         <span
           className={`block h-8 w-8 rounded-full border-2 ${
-            checked ? 'bg-[#53DA69] border-[#53DA69] ' : 'border-secondary'
+            checked ? 'bg-[#53DA69] border-[#49C25D] ' : 'border-secondary'
           }`}
         >
           {' '}

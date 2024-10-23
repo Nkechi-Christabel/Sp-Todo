@@ -16,11 +16,11 @@ export const AddTodo = () => {
         setTodos([...todos, newTodo]);
         navigate(`/${newTodo.id}/edit`);
       }}
-      className='absolute right-3 bottom-3  bg-primary border-2 border-primary rounded-full w-14 h-14'
+      className='absolute right-3 bottom-3  bg-primary border-2 border-[#123EB1] rounded-full w-14 h-14 shadow-xl'
     >
       <div className='flex justify-center items-center'>
         {' '}
-        <span className=' text-white w-6 h-6 font-bold'>+</span>
+        <span className=' text-white text-xl font-bold'>+</span>
       </div>
     </button>
   );
