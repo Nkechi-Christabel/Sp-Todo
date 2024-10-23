@@ -6,7 +6,7 @@ export const Profile = () => {
     <Header>
       <div className='h-[123px] flex items-center space-x-5 px-8'>
         <img
-          src={'/public/profile-pic.png'}
+          src={'/profile-pic.png'}
           alt='John'
           className='w-[50px] h-[50px]'
         />
