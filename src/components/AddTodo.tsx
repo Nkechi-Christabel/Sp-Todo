@@ -1,6 +1,6 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAppContext } from '../../hooks/app-context';
+import { useAppContext } from '../hooks/app-context';
 
 export const AddTodo = () => {
   const navigate = useNavigate();

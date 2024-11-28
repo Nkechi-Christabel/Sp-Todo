@@ -1,7 +1,6 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Todos from './app/Todos';
-import Edit from './app/EditTodo';
-import './App.css';
+import Todos from './app/pages/Todos';
+import Edit from './app/pages/EditTodo';
 import { AppContext } from './hooks/app-context';
 import { useState } from 'react';
 

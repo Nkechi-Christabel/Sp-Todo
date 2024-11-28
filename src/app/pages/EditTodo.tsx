@@ -1,9 +1,7 @@
 import React from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { useAppContext } from '../hooks/app-context';
-import { Header } from './component/Header';
-
-interface Props {}
+import { useAppContext } from '../../hooks/app-context';
+import { Header } from '../../components/Header';
 
 const EditTodo = ({}) => {
   const navigate = useNavigate();
@@ -12,19 +10,22 @@ const EditTodo = ({}) => {
   const todo = todos.find(({ id: todoId }) => todoId === id);
 
   return todo ? (
-    <div className='h-screen container m-auto max-w-[414px] flex flex-col'>
+    <div className='h-screen container m-auto max-w-[635px] flex flex-col'>
       <Header>
-        <h1 className='h-20 flex items-center justify-center text-white font-bold'>
+        <h1 className='h-20 flex items-center justify-center text-white font-bold text-2xl'>
           Edit Task
         </h1>
       </Header>
       <form
         onSubmit={(ev) => {
           ev.preventDefault();
+
           const formData = new FormData(ev.currentTarget);
           const title = (formData.get('title') ?? '') as string;
           setTodos(
-            todos.map((todo) => (todo.id === id ? { ...todo, title } : todo))
+            todos.map((todo) =>
+              todo.id === id && todo.title !== title ? { ...todo, title } : todo
+            )
           );
           navigate('/');
         }}
@@ -36,7 +37,7 @@ const EditTodo = ({}) => {
             type='text'
             name='title'
             defaultValue={todo.title}
-            className='bg-white border-2 border-[#CBCBCB] text-[#0D2972] w-full rounded p-3'
+            className='bg-white border-2 border-[#CBCBCB] text-[#0D2972] w-full h-[69px] rounded-[9px] text-xl p-3'
           />
         </div>
         <div className='flex items-end space-x-3 pb-4'>
@@ -46,13 +47,13 @@ const EditTodo = ({}) => {
               navigate('/');
             }}
             type='button'
-            className='h-12 border-2 border-[#720D0D] bg-[#AB3535] text-white rounded leading-10 px-4 shadow'
+            className='h-[61px] border-2 border-[#720D0D] bg-[#AB3535] text-white rounded-md leading-10 px-6 shadow'
           >
             Delete
           </button>
           <button
             type='submit'
-            className='h-12 flex-1 border-2  border-[#0D2972] bg-primary text-white rounded leading-10 shadow'
+            className='h-[61px] flex-1 border-2  border-[#0D2972] bg-primary text-white rounded-md leading-10 shadow'
           >
             Save
           </button>
@@ -60,7 +61,9 @@ const EditTodo = ({}) => {
       </form>
     </div>
   ) : (
-    <div>Todo not found</div>
+    <div className='flex justify-center items-center h-screen font-bold text-lg text-primary'>
+      Todo not found
+    </div>
   );
 };
 
